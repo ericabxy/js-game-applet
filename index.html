@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
   <link rel="icon" href="pixmaps/jslogo.svg">
   <script type="module" src="src/main.js"></script>
   <title>JavaScript Game Applets</title>
 </head>
 <body>
-  <ol style="list-style-type:upper-roman;">
-    <li>
-      <span>Steppin' Out</span>
+  <ol style="list-style-type:upper-roman;" class="row">
+    <li class="three columns">
+      <span>Beginner</span>
       <ol>
         <li>
           <a href="bounce">Bounce</a>
@@ -21,14 +23,25 @@
         <li>JavaPool</li>
       </ol>
     </li>
-    <li>
-      <span>Up to Speed</span>
+    <li class="three columns">
+      <span>Intermediate</span>
       <ol start="5">
+        <li>Sliding Blocks Brain Teaser</li>
+        <li>Blackjack</li>
+        <li>2-D Maze</li>
+        <li>2-D Sprite Maze</li>
       </ol>
     </li>
-    <li><span>Seven League Boots</span></li>
-    <li><span>The Part of Tens</span></li>
+    <li class="three columns">
+      <span>Advanced</span>
+      <ol start="9">
+        <li>Scripting, Animation, and Sound</li>
+        <li>3-D Polygon Maze</li>
+        <li>Texture-Mapped 3-D Maze</li>
+        <li>Advanced Imaging</li>
+      </ol>
+    </li>
+    <canvas class="three columns" id="myCanvas" width="480" height="320"/>
   </ol>
-  <canvas id="myCanvas" width="480" height="320"/>
 </body>
 </html>
