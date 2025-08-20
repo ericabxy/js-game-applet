@@ -11,9 +11,9 @@ class Circle {
         this.diam = diam;
     }
     
-    dist (loc) {
-        dx = loc.x - this.x;
-        dy = loc.y - this.y;
+    distance (loc) {
+        let dx = loc.x - this.x;
+        let dy = loc.y - this.y;
         return Math.sqrt((dx * dx) + (dy * dy));
     }
 }

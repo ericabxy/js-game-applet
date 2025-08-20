@@ -24,15 +24,24 @@ class Ball extends Circle {
     draw (ctx) {
         ctx.beginPath();
         ctx.arc(this.x + 2, this.y + 2, this.radius, 0, 2 * Math.PI);
-        ctx.fillStyle = "DarkGray";
+        ctx.fillStyle = 'DarkGray';
         ctx.fill();
+        ctx.closePath();
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        ctx.fillStyle = "White";
+        if (this.sunk) {
+            ctx.fillStyle = 'LightGray';
+        } else {
+            ctx.fillStyle = 'White';
+        }
         ctx.fill();
         ctx.closePath();
     }
 
+    isMoving () {
+        return this.vel.dx != 0 || this.vel.dy != 0;
+    }
+    
     move (bounds, friction) {
         let hitHorz = false;
         let hitVert = false;
@@ -51,12 +60,8 @@ class Ball extends Circle {
             this.y += this.vel.dy;
         }
         if (hitHorz || hitVert) {
-            this.decelerate(this.vel.magnitude() * 0.80);
+            this.decelerate(this.vel.magnitude() * 0.60);
         }
-    }
-    
-    moving () {
-        return this.vel.dx != 0 || this.vel.dy != 0;
     }
     
     putt (x, y) {
